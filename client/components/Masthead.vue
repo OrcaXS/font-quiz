@@ -21,6 +21,11 @@
           Open Sans
         </div>
       </div>
+      <div class='column din'>
+        <div :class='{ "active": this.isActive }' @click='toggleActive' class='box'>
+          DIN
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -49,6 +54,12 @@
 .open-sans {
   font-family: 'open-sans', sans-serif;
 }
+.din {
+  font-family: 'DIN Next W01 Rounded', sans-serif;
+}
+.box {
+  height: 3rem;
+}
 </style>
 
 <script>
@@ -69,10 +80,10 @@ export default {
 const webFont = require('webfontloader');
 
 webFont.load({
-  // monotype: {
-  //   projectId: '0a190ec1-8aeb-489e-905c-52340d9f21e2',
-  //   families: ['DIN Next W01 Rounded'],
-  // },
+  monotype: {
+    projectId: '0a190ec1-8aeb-489e-905c-52340d9f21e2',
+    families: ['DIN Next W01 Rounded'],
+  },
   typekit: {
     id: 'source-sans-pro;lato;pt-sans;open-sans',
     api: '//use.edgefonts.net',
